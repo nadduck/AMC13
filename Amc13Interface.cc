@@ -7,7 +7,7 @@ Amc13Interface::Amc13Interface( const std::string& uriT1, const std::string& add
   uhal::setLogLevelTo(uhal::Error());
 
   // this is the way if i want to keep the syntax
-  uhal::ConnectionManager cm( "file://HWInterface/dummy.xml" );
+  uhal::ConnectionManager cm( "file://dummy.xml" );
   uhal::HwInterface T1( cm.getDevice( "T1", uriT1, addressT1 ) );
   uhal::HwInterface T2( cm.getDevice( "T2", uriT2, addressT2 ) );
   fAMC13 = new amc13::AMC13(T1, T2);

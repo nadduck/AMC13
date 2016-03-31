@@ -10,7 +10,7 @@ int main()
   std::string cUri2 = "ipbusudp-2.0://192.168.3.252:50001";
   std::string cAddressT2 = "file:///opt/cactus/etc/amc13/AMC13XG_T2.xml";
 
-  int bgoCommand = 44;
+  int bgoCommand = 28;
   bool bgoRepeat = 0;
   int bgoPrescale = 1;
   int bgoBX = 64;
@@ -23,4 +23,5 @@ int main()
 
   fAmc13Interface->setAmc13Description(fAmc13);
   fAmc13Interface->ConfigureAmc13();  
+  fAmc13Interface->FireBGO();
 }

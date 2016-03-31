@@ -164,6 +164,11 @@ void Amc13Interface::DumpTriggers(int pNlastEntries)
     }
 }
 
+void Amc13Interface::FireBGO()
+{
+  fireBGO();
+}
+
 void Amc13Interface::HaltAMC13()
 {
   std::cout << "Resetting T1, T2 & all counters!" << std::endl;
@@ -252,4 +257,12 @@ void Amc13Interface::disableBGO(int pChan)
   fAMC13->write( amc13::AMC13Simple::T1, tmp, 0);
   // Edit by Georg Auzinger, not in official AMC13 SW package but required
   fAMC13->write( amc13::AMC13Simple::T1, "CONF.TTC.ENABLE_BGO", 0);
+}
+
+void Amc13Interface::fireBGO()
+{
+  char tmp[32]; 
+  
+  snprintf( tmp, sizeof(tmp), "ACTION.TTC.SINGLE_COMMAND");
+  fAMC13->write( amc13::AMC13Simple::T1, tmp, 1);
 }

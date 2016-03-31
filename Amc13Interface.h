@@ -31,6 +31,7 @@ class Amc13Interface
   //void SendBGO();
   void EnableBGO(int pChan);
   void DisableBGO(int pChan);
+  void FireBGO();
 
   // TTC History methods!
   void ConfigureTTCHistory(std::vector<std::pair<int, uint32_t>> pFilterConfig);
@@ -49,6 +50,7 @@ class Amc13Interface
   void enableBGO(int pChan);
   void disableBGO(int pChan);
   void configureBGO(int pChan, uint8_t pCommand, uint16_t pBX, uint16_t pPrescale, bool pRepeat);
+  void fireBGO();
 };
 
 
